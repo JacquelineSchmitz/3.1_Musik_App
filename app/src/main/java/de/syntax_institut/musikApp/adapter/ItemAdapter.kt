@@ -10,6 +10,7 @@ import android.widget.TextView
 import androidx.cardview.widget.CardView
 import androidx.core.content.res.ResourcesCompat
 import androidx.recyclerview.widget.RecyclerView
+import com.google.android.material.card.MaterialCardView
 import de.syntax_institut.musikApp.DetailActivity
 import de.syntax_institut.musikApp.R
 import de.syntax_institut.musikApp.data.model.Song
@@ -32,6 +33,7 @@ class ItemAdapter(
 
         // Verweis auf die CardView, damit die gesamte View klickbar ist
         // TODO Schreibe hier deinen Code
+        val itemCardView: MaterialCardView = itemView.findViewById(R.id.item_cardView)
     }
 
     /**
@@ -60,6 +62,7 @@ class ItemAdapter(
         val length = holder.textViewLength
         val cover = holder.imageViewCover
         // TODO Schreibe hier deinen Code
+        val item = holder.itemCardView
 
         // Setze Attribute
         title.text = context.resources.getString(song.stringResource)
@@ -68,6 +71,12 @@ class ItemAdapter(
 
         // setze einen onClickListener für die CardView
         // TODO Schreibe hier deinen Code
+        holder.itemCardView.setOnClickListener{
+            val intent = Intent(context, DetailActivity::class.java)
+            intent.putExtra("imageId", song.imageResource)
+            intent.putExtra("stringId", song.stringResource)
+            context.startActivity(intent)
+        }
     }
 
     /**

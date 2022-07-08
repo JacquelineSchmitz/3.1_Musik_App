@@ -37,7 +37,7 @@
     <!-- UI -->
     <string name="playlist_name">Die beste Playlist der Welt</string>
     <string name="created_by">erstellt von MusikKenner42</string>
-    <string name="play_from_playlist">Spiele aus Playlist:\nDie beste Playlist der Welt</string>
+    <string name="play_from_playlist">Songs aus Playlist:\nDie beste Playlist der Welt</string>
     <string name="share_btn">Teile diesen Song</string>
 
     <!-- Content Descritions -->
